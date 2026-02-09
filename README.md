@@ -1,7 +1,7 @@
 # ntl-map
 A night time map is generated and visualised as an leafmap.
 
-Data Requirements
+# Data Requirements
 To run the script, place your data in a data/ folder:
 
 data/viirs.tif: VIIRS NTL Nighttime Day/Night Band (DNB) raster.
