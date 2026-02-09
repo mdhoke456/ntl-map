@@ -7,7 +7,7 @@ import folium
 # --- Paths (relative) ---
 RASTER = "data/viirs.tif"
 WARDS = "data/Pune.geojson"
-OUTPUT_HTML = "ntl_dec2025_map.html"
+OUTPUT_HTML = "index.html"
 
 # --- Load data ---
 ntl = rxr.open_rasterio(RASTER, masked=True)
@@ -64,4 +64,5 @@ folium.GeoJson(
 
 m.save(OUTPUT_HTML)
 print(f"Map saved to {OUTPUT_HTML}")
+
 
