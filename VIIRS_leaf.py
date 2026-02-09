@@ -62,7 +62,32 @@ folium.GeoJson(
     )
 ).add_to(m)
 
+title_html = '''
+             <h3 align="center" style="font-size:20px; color:white; 
+             position:fixed; top:10px; left:50%; transform:translateX(-50%); 
+             z-index:9999; background-color:rgba(0,0,0,0.6); padding:10px; 
+             border-radius:10px; font-family: sans-serif;">
+             Pune Nightlight Intensity (Dec 2025)
+             </h3>
+             '''
+
+legend_html = '''
+     <div style="position: fixed; 
+     bottom: 30px; left: 30px; width: 160px; height: auto; 
+     background-color: rgba(255, 255, 255, 0.9); border:2px solid grey; 
+     z-index:9999; font-size:14px; padding: 10px; border-radius: 8px;
+     font-family: sans-serif; line-height: 1.6;">
+     <b>NTL Class</b><br>
+     <i style="background:#d7191c; width:12px; height:12px; display:inline-block; border:1px solid #000;"></i> Very High<br>
+     <i style="background:#fdae61; width:12px; height:12px; display:inline-block; border:1px solid #000;"></i> High<br>
+     <i style="background:#abd9e9; width:12px; height:12px; display:inline-block; border:1px solid #000;"></i> Medium<br>
+     <i style="background:#2c7bb6; width:12px; height:12px; display:inline-block; border:1px solid #000;"></i> Low
+     </div>
+     '''
+
+m.get_root().html.add_child(folium.Element(title_html))
+m.get_root().html.add_child(folium.Element(legend_html))
+
 m.save(OUTPUT_HTML)
 print(f"Map saved to {OUTPUT_HTML}")
-
 
